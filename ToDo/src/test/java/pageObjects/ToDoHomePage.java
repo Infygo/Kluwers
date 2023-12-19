@@ -1,6 +1,7 @@
 package pageObjects;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
@@ -25,40 +26,57 @@ public class ToDoHomePage {
 	By clearCompletedButton = By.xpath("//button[@class='clear-completed']");
 	By destroyButton = By.xpath("//button[@class='clear-completed']");
 
-	public String getTitleHomePage() {
+	public String getTitle() {
 		return driver.getTitle();
 	}
-	
-	public int getCountOfLinks() {
+
+	public String getPageUrl() {
+		return driver.getCurrentUrl();
+	}
+
+	public String getHeader() {
+		return GenericUtils.getTextOfWebElement(titleHeader);
+	}
+
+	public Boolean checkInputBoxExists() {
+		return GenericUtils.checkElementPresent(inputTextBox);
+	}
+
+	public Integer getCountOfFooterLinks() {
 		return driver.findElements(webLinks).size();
 	}
 	
-	public void clickClearCompleted() {
-		driver.findElement(clearCompletedButton);
+	public Integer getItemLeftCount() {
+		return Integer.parseInt(GenericUtils.getTextOfWebElement(countToDoItems));
 	}
-	
-	public String getItemLeftCount() {
-		return driver.findElement(countToDoItems).getText();
-	}
-	
-	public int getCompletedTasksCount() {
+
+	public Integer getCompletedTasksCount() {
 		return driver.findElements(completedToDos).size();
 	}
 	
-	public void clickDestroy() {
-		driver.findElement(destroyButton);
+	public Integer todoRows() {
+		return driver.findElements(listofToDos).size();
 	}
-	
+
+	public void clickClearCompleted() {
+		driver.findElement(clearCompletedButton).click();
+	}
+
+	public void clickDestroy() {
+		driver.findElement(destroyButton).click();
+	}
+
 	public void clickOnToggles() {
 		List<WebElement> toggles = driver.findElements(toggleCheckBox);
 		for (WebElement ele : toggles) {
 			ele.click();
 		}
 	}
-	
+
 	public void addItemsToDo(String todoTasks) {
 		WebElement inputBox = GenericUtils.explicitWait(inputTextBox);
 		inputBox.click();
 		inputBox.sendKeys(todoTasks);
+		inputBox.sendKeys(Keys.ENTER);
 	}
 }

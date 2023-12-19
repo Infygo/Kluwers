@@ -1,6 +1,5 @@
 package stepDefinitions;
 
-
 import java.io.File;
 import java.io.IOException;
 
@@ -16,22 +15,21 @@ import utils.TestContextSetup;
 
 public class Hooks {
 	TestContextSetup testContextSetup;
-	
+
 	public Hooks(TestContextSetup testContextSetup) {
 		this.testContextSetup = testContextSetup;
 	}
-	
+
 	@After
 	public void afterScenario() {
-		testContextSetup.base.quitDriver();
+		testContextSetup.baseDriver.quitDriver();
 	}
-	
-	// To take screenshot after every step if its failed 
+
 	@AfterStep
 	public void addScreenShot(Scenario scenario) throws IOException {
-		WebDriver driver = testContextSetup.base.driverManager();
-		if(scenario.isFailed()) {
-			File sourcePath = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+		WebDriver driver = testContextSetup.baseDriver.driverManager();
+		if (scenario.isFailed()) {
+			File sourcePath = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
 			byte[] fileContent = FileUtils.readFileToByteArray(sourcePath);
 			scenario.attach(fileContent, "image/png", "image");
 		}

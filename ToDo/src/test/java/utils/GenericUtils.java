@@ -19,6 +19,10 @@ public class GenericUtils {
 	public static WebElement getWebElement(By locator) {
 		return driver.findElement(locator);
 	}
+	
+	public static String getTextOfWebElement(By locator) {
+		return getWebElement(locator).getText();
+	}
 
 	public static WebElement explicitWait(By locator) {
 		WebDriverWait expWait = new WebDriverWait(driver, Duration.ofSeconds(10));
