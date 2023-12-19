@@ -35,8 +35,12 @@ public class BaseDriverSetup {
 				System.setProperty("webdriver.gecko.driver", geckoDriverPath);
 				driver = new FirefoxDriver();
 			}
-			driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+			
 			driver.get(homeUrl);
+			driver.manage().window().maximize();
+			driver.manage().deleteAllCookies();
+			driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+			
 		}
 		return driver;
 	}
