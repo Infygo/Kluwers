@@ -16,24 +16,24 @@ public class GenericUtils {
 		this.driver = driver;
 	}
 
-	public static WebElement getWebElement(WebElement locator) {
-		return locator;
-	}
-	
-	public static WebElement explicitWait(By locator) {
-		 WebDriverWait expWait = new WebDriverWait(driver, Duration.ofSeconds(10));
-		 return expWait.until(ExpectedConditions.visibilityOfElementLocated(locator));		
+	public static WebElement getWebElement(By locator) {
+		return driver.findElement(locator);
 	}
 
-	public static void actionMouseMovement(WebElement locator) {
+	public static WebElement explicitWait(By locator) {
+		WebDriverWait expWait = new WebDriverWait(driver, Duration.ofSeconds(10));
+		return expWait.until(ExpectedConditions.visibilityOfElementLocated(locator));
+	}
+
+	public static void actionMouseMovement(By locator) {
 		Actions action = new Actions(driver);
 		action.moveToElement(getWebElement(locator)).build().perform();
 	}
 
-	public static boolean checkElementPresent(WebElement locator) {
-		locator = getWebElement(locator);
+	public static boolean checkElementPresent(By locator) {
+		WebElement findElement = getWebElement(locator);
 		try {
-			if (locator.isDisplayed()) {
+			if (findElement.isDisplayed()) {
 				System.out.println("element is present");
 			}
 			return true;
