@@ -3,8 +3,9 @@ package stepDefinitions;
 import java.util.List;
 import java.util.Map;
 
-import org.junit.*;
+
 import org.openqa.selenium.WebDriver;
+import org.testng.Assert;
 
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.And;
@@ -32,7 +33,7 @@ public class ToDoHomePageStepDefinition {
 
 	@Given("User is on the ToDo app home page")
 	public void checkHomePage() {
-		org.junit.Assert.assertTrue(todoHomePage.getPageUrl().contains("angular2"));
+		Assert.assertTrue(todoHomePage.getPageUrl().contains("angular2"));
 	}
 
 	@When("Page is loaded with the header {string} title {string}")

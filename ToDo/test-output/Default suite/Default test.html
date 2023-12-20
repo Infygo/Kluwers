@@ -57,9 +57,9 @@ function toggleAllBoxes() {
 <tr>
 <td>Tests passed/Failed/Skipped:</td><td>9/1/0</td>
 </tr><tr>
-<td>Started on:</td><td>Wed Dec 20 19:22:17 CET 2023</td>
+<td>Started on:</td><td>Wed Dec 20 19:59:43 CET 2023</td>
 </tr>
-<tr><td>Total time:</td><td>50 seconds (50373 ms)</td>
+<tr><td>Total time:</td><td>51 seconds (51135 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -77,24 +77,26 @@ function toggleAllBoxes() {
 </tr>
 <tr>
 <td title='runner.TestngTestRunner.runScenario()'><b>runScenario</b><br>Test class: runner.TestngTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Check if duplicate tasks can be added", "Validate Negative scenarios for the TODO app"</td>
-<td><div><pre>java.lang.AssertionError: Values should be different. Actual: 2
-	at org.junit.Assert.fail(Assert.java:89)
-	at org.junit.Assert.failEquals(Assert.java:187)
-	at org.junit.Assert.assertNotEquals(Assert.java:163)
-	at org.junit.Assert.assertNotEquals(Assert.java:177)
-	at stepDefinitions.ToDoHomePageStepDefinition.duplicateTasks(ToDoHomePageStepDefinition.java:111)
+<td><div><pre>java.lang.AssertionError: did not expect [2] but found [2]
+	at org.testng.Assert.fail(Assert.java:111)
+	at org.testng.Assert.failEquals(Assert.java:1582)
+	at org.testng.Assert.assertNotEqualsImpl(Assert.java:157)
+	at org.testng.Assert.assertNotEquals(Assert.java:2198)
+	at org.testng.Assert.assertNotEquals(Assert.java:2220)
+	at stepDefinitions.ToDoHomePageStepDefinition.duplicateTasks(ToDoHomePageStepDefinition.java:112)
 	at ✽.Check if 2 Duplicate tasks are added(file:///C:/Users/vigne/Desktop/WoltersKluwers/ToDo/src/test/java/features/NegativeScenarios.feature:10)
-</pre></div><a href='#' onClick='toggleBox("stack-trace1743770306", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1743770306'><pre>java.lang.AssertionError: Values should be different. Actual: 2
-	at org.junit.Assert.fail(Assert.java:89)
-	at org.junit.Assert.failEquals(Assert.java:187)
-	at org.junit.Assert.assertNotEquals(Assert.java:163)
-	at org.junit.Assert.assertNotEquals(Assert.java:177)
-	at stepDefinitions.ToDoHomePageStepDefinition.duplicateTasks(ToDoHomePageStepDefinition.java:111)
+</pre></div><a href='#' onClick='toggleBox("stack-trace915540950", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace915540950'><pre>java.lang.AssertionError: did not expect [2] but found [2]
+	at org.testng.Assert.fail(Assert.java:111)
+	at org.testng.Assert.failEquals(Assert.java:1582)
+	at org.testng.Assert.assertNotEqualsImpl(Assert.java:157)
+	at org.testng.Assert.assertNotEquals(Assert.java:2198)
+	at org.testng.Assert.assertNotEquals(Assert.java:2220)
+	at stepDefinitions.ToDoHomePageStepDefinition.duplicateTasks(ToDoHomePageStepDefinition.java:112)
 	at ✽.Check if 2 Duplicate tasks are added(file:///C:/Users/vigne/Desktop/WoltersKluwers/ToDo/src/test/java/features/NegativeScenarios.feature:10)
 </pre></div></td>
-<td>3</td>
-<td>runner.TestngTestRunner@1fa121e2</td></tr>
+<td>2</td>
+<td>runner.TestngTestRunner@185a6e9</td></tr>
 </table><p>
 <table width='100%' border='1' class='invocation-passed'>
 <tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
@@ -108,47 +110,47 @@ function toggleAllBoxes() {
 <td title='runner.TestngTestRunner.runScenario()'><b>runScenario</b><br>Test class: runner.TestngTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Check if the tasks can be deleted using cross button", "Validate Positive E2E scenarios & functionalities of the TODO app"</td>
 <td></td>
 <td>8</td>
-<td>runner.TestngTestRunner@1fa121e2</td></tr>
+<td>runner.TestngTestRunner@185a6e9</td></tr>
 <tr>
 <td title='runner.TestngTestRunner.runScenario()'><b>runScenario</b><br>Test class: runner.TestngTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Check if the tasks can be marked done using toggle button", "Validate Positive E2E scenarios & functionalities of the TODO app"</td>
 <td></td>
 <td>2</td>
-<td>runner.TestngTestRunner@1fa121e2</td></tr>
-<tr>
-<td title='runner.TestngTestRunner.runScenario()'><b>runScenario</b><br>Test class: runner.TestngTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Check if blank characters, spaces can be added to todo tasks", "Validate Negative scenarios for the TODO app"</td>
-<td></td>
-<td>6</td>
-<td>runner.TestngTestRunner@1fa121e2</td></tr>
-<tr>
-<td title='runner.TestngTestRunner.runScenario()'><b>runScenario</b><br>Test class: runner.TestngTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Refreshing browser window holds the data entered", "Validate Negative scenarios for the TODO app"</td>
-<td></td>
-<td>8</td>
-<td>runner.TestngTestRunner@1fa121e2</td></tr>
-<tr>
-<td title='runner.TestngTestRunner.runScenario()'><b>runScenario</b><br>Test class: runner.TestngTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Check Minimum and Maximum characters input to the todo app", "Validate Negative scenarios for the TODO app"</td>
-<td></td>
-<td>1</td>
-<td>runner.TestngTestRunner@1fa121e2</td></tr>
-<tr>
-<td title='runner.TestngTestRunner.runScenario()'><b>runScenario</b><br>Test class: runner.TestngTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Validate the UI , Header, InputBox & Footer links", "Validate Positive E2E scenarios & functionalities of the TODO app"</td>
-<td></td>
-<td>2</td>
-<td>runner.TestngTestRunner@1fa121e2</td></tr>
-<tr>
-<td title='runner.TestngTestRunner.runScenario()'><b>runScenario</b><br>Test class: runner.TestngTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Add tasks to the app and validate the count of tasks to be done", "Validate Positive E2E scenarios & functionalities of the TODO app"</td>
-<td></td>
-<td>2</td>
-<td>runner.TestngTestRunner@1fa121e2</td></tr>
+<td>runner.TestngTestRunner@185a6e9</td></tr>
 <tr>
 <td title='runner.TestngTestRunner.runScenario()'><b>runScenario</b><br>Test class: runner.TestngTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Check if a done task can be unchecked and change reflects", "Validate Positive E2E scenarios & functionalities of the TODO app"</td>
 <td></td>
 <td>2</td>
-<td>runner.TestngTestRunner@1fa121e2</td></tr>
+<td>runner.TestngTestRunner@185a6e9</td></tr>
 <tr>
 <td title='runner.TestngTestRunner.runScenario()'><b>runScenario</b><br>Test class: runner.TestngTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Checks if the tasks completed can be Cleared", "Validate Positive E2E scenarios & functionalities of the TODO app"</td>
 <td></td>
 <td>12</td>
-<td>runner.TestngTestRunner@1fa121e2</td></tr>
+<td>runner.TestngTestRunner@185a6e9</td></tr>
+<tr>
+<td title='runner.TestngTestRunner.runScenario()'><b>runScenario</b><br>Test class: runner.TestngTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Validate the UI , Header, InputBox & Footer links", "Validate Positive E2E scenarios & functionalities of the TODO app"</td>
+<td></td>
+<td>2</td>
+<td>runner.TestngTestRunner@185a6e9</td></tr>
+<tr>
+<td title='runner.TestngTestRunner.runScenario()'><b>runScenario</b><br>Test class: runner.TestngTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Check if blank characters, spaces can be added to todo tasks", "Validate Negative scenarios for the TODO app"</td>
+<td></td>
+<td>6</td>
+<td>runner.TestngTestRunner@185a6e9</td></tr>
+<tr>
+<td title='runner.TestngTestRunner.runScenario()'><b>runScenario</b><br>Test class: runner.TestngTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Check Minimum and Maximum characters input to the todo app", "Validate Negative scenarios for the TODO app"</td>
+<td></td>
+<td>1</td>
+<td>runner.TestngTestRunner@185a6e9</td></tr>
+<tr>
+<td title='runner.TestngTestRunner.runScenario()'><b>runScenario</b><br>Test class: runner.TestngTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Add tasks to the app and validate the count of tasks to be done", "Validate Positive E2E scenarios & functionalities of the TODO app"</td>
+<td></td>
+<td>2</td>
+<td>runner.TestngTestRunner@185a6e9</td></tr>
+<tr>
+<td title='runner.TestngTestRunner.runScenario()'><b>runScenario</b><br>Test class: runner.TestngTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Refreshing browser window holds the data entered", "Validate Negative scenarios for the TODO app"</td>
+<td></td>
+<td>8</td>
+<td>runner.TestngTestRunner@185a6e9</td></tr>
 </table><p>
 </body>
 </html>
