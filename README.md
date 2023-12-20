@@ -27,8 +27,8 @@ Light weight ToDo app and development of Cucumber Test Automation framework to t
 
 ## Testcases
 - Automation test cases are created for Positive scenarios and Negative scenarios that are listed below
-- PositiveScenario.feature file will have the background and only positive E2E scenarios with tagging @Positive
-- NegativeScenario.feature file will have only negative scenarios with tagging @Negative
+- PositiveScenario.feature file will have the background and only positive E2E scenarios with tagging **@Positive**
+- NegativeScenario.feature file will have only negative scenarios with tagging **@Negative**
 - With the tagging concept the runner can be adjusted to execute only positive or negative scenarios or both based on the execution requirement 
 
 ### Positive Scenarios 
