@@ -1,6 +1,7 @@
 # Kluwers Test Automation Framework for ToDoApp
 Light weight ToDo app and development of Cucumber Test Automation framework to test the ToDo app
 - [About](#about)
+- [FrameworkDesign](#frameworkdesign)
 - [Features](#features)
 - [Testcases](#testcases)
 - [Execution](#execution)
@@ -18,7 +19,18 @@ Light weight ToDo app and development of Cucumber Test Automation framework to t
 - Assertions using Testng asserts
 - Reporting in the Framework is achieved using Extentreport , html and json format
 - Test cases can be executed in either chrome or firefox browser based on the maven browser parameter passed in the maven command
-- browser and url parameters are set in the properties file and can be overrided from maven command line 
+- browser and url parameters are set in the properties file and can be overrided from maven command line
+
+## FrameworkDesign 
+- The Framework is designed to support Page object factory pattern
+- feature package - will hold the feature files with the positive , negative scenarios
+- pageObject package - will hold the pageobjects for each page and a pageobject manager
+- runner package - will hold the test runner file where the feature, stepdefinition and tagging is glued along with reporting plugins
+- stepdefintion package - will hold dedicated step definition for each methods and actions performed on each page along with the hooks file
+- utils package - holds the common generic methods that can be used across the framework
+- resources folder - will have the driver files, properties files
+- Reporting - framework supports extentreports, html and json
+![image](https://github.com/Infygo/WoltersKluwers/assets/39874937/1f674491-eeca-4c9a-b303-37a78a7475ab)
 
 ## Features 
 - ToDo tasks / Items can be added to the app
