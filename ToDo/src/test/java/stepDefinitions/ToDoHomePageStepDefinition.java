@@ -21,6 +21,7 @@ public class ToDoHomePageStepDefinition {
 	TestContextSetup testContext;
 	PageObjectManager pageObjectManager;
 	GenericUtils genericUtils;
+	private List<String> updateTasks;
 
 	public ToDoHomePage todoHomePage;
 
@@ -61,9 +62,43 @@ public class ToDoHomePageStepDefinition {
 		}
 	}
 
+	@Then("Update tasks in the ToDo app")
+	public void updateTasksToDo(DataTable dataTable) throws InterruptedException {
+		updateTasks = dataTable.asList(String.class);
+		todoHomePage.updateItemsToDo(updateTasks);
+	}
+
 	@Then("User checks the count of tasks to be done {int}")
 	public void todoTasksCount(Integer count) {
 		Assert.assertEquals(count, todoHomePage.getItemLeftCount());
+	}
+
+	@Then("User deletes all tasks {int}")
+	public void deleteTasks(Integer tasksToDelete) {
+		for (int i = 0; i < tasksToDelete; i++) {
+			todoHomePage.clickDestroy();
+		}
+	}
+
+	@And("Check if tasks are deleted")
+	public void checkIfTasksExists() {
+		Assert.assertFalse("If tasks are deleted", todoHomePage.checkToDoTasksExists());
+	}
+	
+	@And("Mark the tasks as Done")
+	public void markTasksToDone() {
+		todoHomePage.clickOnToggles();
+	}
+	
+	@Then("Check if the tasks are marked Completed {int}")
+	public void checkDoneTasks(Integer doneTasksCount) {
+		Assert.assertEquals("Check if done tasks count matches", doneTasksCount, todoHomePage.getCompletedTasksCount());
+	}
+	
+	@Then("User clicks on Clear Completed button")
+	public void clearTasks() {
+		todoHomePage.clickClearCompleted();
+		Assert.assertFalse("If tasks are cleared", todoHomePage.checkCompletedTasksExists());
 	}
 
 }

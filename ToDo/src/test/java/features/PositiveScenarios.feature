@@ -19,17 +19,7 @@
 @tag
 Feature: Validate Positive E2E scenarios & functionalities of the TODO app
 
-  #@UiCheck
-  #Scenario Outline: Validate the UI , Header, InputBox & Footer links
-  #Given User is on the ToDo app home page
-  #When Page is loaded with the header <Header> title <Title>
-  #Then User checks inputbox is present
-  #And User checks the footer notes links <FooterLinks>
-  #Examples:
-  #| Title                | Header  | FooterLinks |
-  #| "Angular2 • TodoMVC" | "todos" |           4 |
-  @AddTasks
-  Scenario Outline: Add tasks to the app and validate the count of tasks to be done
+  Background: 
     Given User is on the ToDo app home page
     Then Add tasks to the ToDo app
       | Task              | rowid |
@@ -38,13 +28,43 @@ Feature: Validate Positive E2E scenarios & functionalities of the TODO app
       | Check !@$%^&*     |     3 |
       | 1234567890        |     4 |
       | Groceries         |     5 |
-    Then User checks the count of tasks to be done <Count>
 
+  @UiCheck
+  Scenario Outline: Validate the UI , Header, InputBox & Footer links
+    When Page is loaded with the header <Header> title <Title>
+    Then User checks inputbox is present
+    And User checks the footer notes links <FooterLinks>
     Examples: 
-      | Count |
-      |     5 |
+      | Title                | Header  | FooterLinks |
+      | "Angular2 • TodoMVC" | "todos" |           4 |
 
-  @EditAddedTask
-  Scenario Outline: Edit added task in the todo app
-  	Given User is on the ToDo app home page 
-  	Then Add tasks to the 
+  @AddTasks
+  Scenario Outline: Add tasks to the app and validate the count of tasks to be done
+    Then User checks the count of tasks to be done <ItemsLeft>
+    Examples: 
+      | ItemsLeft |
+      |         5 |
+
+  @DeleteTasks
+  Scenario Outline: Check if the tasks can be deleted using cross button
+    Then User checks the count of tasks to be done <TaskCount>
+    Then User deletes all tasks <TaskCount>
+    And Check if tasks are deleted
+    Examples: 
+      | TaskCount |
+      |         5 |
+
+  @DoneTasks
+  Scenario Outline: Check if the tasks can be marked done using toggle button
+    And Mark the tasks as Done
+    Then Check if the tasks are marked Completed <TaskCount>
+    And User checks the count of tasks to be done <ItemsLeft>
+    Examples: 
+      | TaskCount | ItemsLeft |
+      |         5 |         0 |
+
+  @ClearCompleted
+  Scenario Outline: Checks if the tasks completed can be Cleared
+    And Mark the tasks as Done
+    Then User clicks on Clear Completed button
+    And Check if tasks are deleted

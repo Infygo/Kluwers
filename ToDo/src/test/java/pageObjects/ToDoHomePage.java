@@ -20,11 +20,12 @@ public class ToDoHomePage {
 	By inputTextBox = By.xpath("//header/input[1]");
 	By webLinks = By.xpath("//a");
 	By listofToDos = By.xpath("//ul[@class='todo-list']/li");
+	By editToDoList = By.xpath("//ul[@class='todo-list']/li[@class='editing']");
 	By completedToDos = By.xpath("//ul[@class='todo-list']/li[@class='completed']");
 	By toggleCheckBox = By.xpath("//input[@class='toggle']");
 	By countToDoItems = By.xpath("//span[@class='todo-count']/strong");
 	By clearCompletedButton = By.xpath("//button[@class='clear-completed']");
-	By destroyButton = By.xpath("//button[@class='clear-completed']");
+	By destroyButton = By.xpath("//button[@class='destroy']");
 
 	public String getTitle() {
 		return driver.getTitle();
@@ -45,7 +46,7 @@ public class ToDoHomePage {
 	public Integer getCountOfFooterLinks() {
 		return driver.findElements(webLinks).size();
 	}
-	
+
 	public Integer getItemLeftCount() {
 		return Integer.parseInt(GenericUtils.getTextOfWebElement(countToDoItems));
 	}
@@ -53,7 +54,7 @@ public class ToDoHomePage {
 	public Integer getCompletedTasksCount() {
 		return driver.findElements(completedToDos).size();
 	}
-	
+
 	public Integer todoRows() {
 		return driver.findElements(listofToDos).size();
 	}
@@ -63,7 +64,16 @@ public class ToDoHomePage {
 	}
 
 	public void clickDestroy() {
+		GenericUtils.moveToElement(driver.findElement(listofToDos));
 		driver.findElement(destroyButton).click();
+	}
+	
+	public boolean checkToDoTasksExists() {
+		return GenericUtils.checkElementPresent(listofToDos);
+	}
+	
+	public boolean checkCompletedTasksExists() {
+		return GenericUtils.checkElementPresent(completedToDos);
 	}
 
 	public void clickOnToggles() {
@@ -78,5 +88,28 @@ public class ToDoHomePage {
 		inputBox.click();
 		inputBox.sendKeys(todoTasks);
 		inputBox.sendKeys(Keys.ENTER);
+	}
+
+	public void updateItemsToDo(List<String> updateTasks) throws InterruptedException {
+		List<WebElement> currentTasks = driver.findElements(listofToDos);
+		for (int i = 0; i < currentTasks.size(); i++) {
+			GenericUtils.doubleClick(currentTasks.get(i));
+			System.out.println("Stop here -- goes to edit mode");
+			WebElement editBox = driver.findElement(editToDoList);
+			GenericUtils.emptyTaskInputBox(editBox);
+			System.out.println("Stop here -- goes to view mode");
+			GenericUtils.doubleClick(currentTasks.get(i));
+			System.out.println("Stop here -- goes to edit mode");
+			Thread.sleep(2000);
+			if(editBox.isDisplayed()) {
+				editBox.click();
+			}
+			else {
+				GenericUtils.doubleClick(currentTasks.get(i));
+				editBox.click();
+			}
+			editBox.sendKeys(updateTasks.get(i));
+			editBox.sendKeys(Keys.ENTER);
+		}
 	}
 }
