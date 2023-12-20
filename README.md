@@ -16,7 +16,9 @@ Light weight ToDo app and development of Cucumber Test Automation framework to t
 - Maven build management tool is used 
 - TestRunner is implemented with TestNG
 - Assertions using Testng asserts
-- Reporting in the Framework is achieved using Extentreport , html and json format 
+- Reporting in the Framework is achieved using Extentreport , html and json format
+- Test cases can be executed in either chrome or firefox browser based on the maven browser parameter passed in the maven command
+- browser and url parameters are set in the properties file and can be overrided from maven command line 
 
 ## Features 
 - ToDo tasks / Items can be added to the app
@@ -92,7 +94,8 @@ Light weight ToDo app and development of Cucumber Test Automation framework to t
 - Change directory in the command prompt to the project folder location - cd .\ToDo
 - run the command: **mvn clean**
 - Once the build is success
-- run the command: **mvn test -Dcucumber.filter.tags="@Positive or @Negative" -Dbrowser=chrome**
+- run the command for chrome execution : **mvn test -Dcucumber.filter.tags="@Positive or @Negative" -Dbrowser=chrome**
+- run the command for chrome execution : **mvn test -Dcucumber.filter.tags="@Positive or @Negative" -Dbrowser=firefox**
 - the execution of above command will execute both the positive and negative test case scenarios 
 - Tests will start getting executed and browser invocation will be triggered automatically
 
