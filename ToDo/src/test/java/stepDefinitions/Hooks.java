@@ -29,7 +29,7 @@ public class Hooks {
 	public void addScreenShot(Scenario scenario) throws IOException {
 		WebDriver driver = testContextSetup.baseDriver.driverManager();
 		if (scenario.isFailed()) {
-			File sourcePath = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+			File sourcePath = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
 			byte[] fileContent = FileUtils.readFileToByteArray(sourcePath);
 			scenario.attach(fileContent, "image/png", "image");
 		}
