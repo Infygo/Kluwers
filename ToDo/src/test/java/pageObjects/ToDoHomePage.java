@@ -89,6 +89,14 @@ public class ToDoHomePage {
 		inputBox.sendKeys(todoTasks);
 		inputBox.sendKeys(Keys.ENTER);
 	}
+	
+	public void addBlankItems() {
+		WebElement inputBox = driver.findElement(inputTextBox);
+		inputBox.click();
+		inputBox.sendKeys(Keys.ENTER);
+		inputBox.sendKeys(Keys.SPACE);
+		inputBox.sendKeys(Keys.ENTER);		
+	}
 
 	public void updateItemsToDo(List<String> updateTasks) throws InterruptedException {
 		List<WebElement> currentTasks = driver.findElements(listofToDos);

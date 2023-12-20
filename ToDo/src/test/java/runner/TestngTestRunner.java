@@ -7,15 +7,15 @@ import io.cucumber.testng.CucumberOptions;
 
 @CucumberOptions(features = "src/test/java/features", 
 				 glue = "stepDefinitions", 
-				 plugin = { "html:target/cucumber.html",
-						    "json:target/cucumber.json", 
-						    "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:",
-		                    "rerun:target/failed_scenarios.txt" }, 
+				 tags = "@Positive or @Negative",
+				 plugin = {"html:target/cucumber-report.html",
+						    "json:target/cucumber-report.json", 
+						    }, 
 				 monochrome = true)
 public class TestngTestRunner extends AbstractTestNGCucumberTests {
 
 	@Override
-	@DataProvider(parallel = true)
+	@DataProvider(parallel = false)
 	public Object[][] scenarios() {
 		return super.scenarios();
 	}

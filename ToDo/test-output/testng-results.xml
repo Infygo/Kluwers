@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="10" passed="9" failed="1" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2023-12-20T19:22:17 CET" name="Default suite" finished-at="2023-12-20T19:23:07 CET" duration-ms="50373">
+    <groups>
+      <group name="cucumber">
+        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestngTestRunner@1fa121e2]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
+      </group> <!-- cucumber -->
+    </groups>
+    <test started-at="2023-12-20T19:22:17 CET" name="Default test" finished-at="2023-12-20T19:23:07 CET" duration-ms="50373">
+      <class name="runner.TestngTestRunner">
+        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:runner.TestngTestRunner@1fa121e2]" started-at="2023-12-20T19:22:17 CET" name="setUpClass" finished-at="2023-12-20T19:22:17 CET" duration-ms="645" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@1c2dd89b]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpClass -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestngTestRunner@1fa121e2]" started-at="2023-12-20T19:22:17 CET" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2023-12-20T19:22:20 CET" duration-ms="3155" status="FAIL">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Check if duplicate tasks can be added"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Validate Negative scenarios for the TODO app"]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[Values should be different. Actual: 2]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: Values should be different. Actual: 2
+at org.junit.Assert.fail(Assert.java:89)
+at org.junit.Assert.failEquals(Assert.java:187)
+at org.junit.Assert.assertNotEquals(Assert.java:163)
+at org.junit.Assert.assertNotEquals(Assert.java:177)
+at stepDefinitions.ToDoHomePageStepDefinition.duplicateTasks(ToDoHomePageStepDefinition.java:111)
+at ✽.Check if 2 Duplicate tasks are added(file:///C:/Users/vigne/Desktop/WoltersKluwers/ToDo/src/test/java/features/NegativeScenarios.feature:10)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestngTestRunner@1fa121e2]" started-at="2023-12-20T19:22:20 CET" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2023-12-20T19:22:27 CET" duration-ms="6531" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Check if blank characters, spaces can be added to todo tasks"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Validate Negative scenarios for the TODO app"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestngTestRunner@1fa121e2]" started-at="2023-12-20T19:22:27 CET" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2023-12-20T19:22:29 CET" duration-ms="1870" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Check Minimum and Maximum characters input to the todo app"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Validate Negative scenarios for the TODO app"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestngTestRunner@1fa121e2]" started-at="2023-12-20T19:22:29 CET" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2023-12-20T19:22:37 CET" duration-ms="8069" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Refreshing browser window holds the data entered"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Validate Negative scenarios for the TODO app"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestngTestRunner@1fa121e2]" started-at="2023-12-20T19:22:37 CET" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2023-12-20T19:22:39 CET" duration-ms="2098" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Validate the UI , Header, InputBox & Footer links"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Validate Positive E2E scenarios & functionalities of the TODO app"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestngTestRunner@1fa121e2]" started-at="2023-12-20T19:22:39 CET" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2023-12-20T19:22:41 CET" duration-ms="2083" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Add tasks to the app and validate the count of tasks to be done"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Validate Positive E2E scenarios & functionalities of the TODO app"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestngTestRunner@1fa121e2]" started-at="2023-12-20T19:22:41 CET" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2023-12-20T19:22:49 CET" duration-ms="8396" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Check if the tasks can be deleted using cross button"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Validate Positive E2E scenarios & functionalities of the TODO app"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestngTestRunner@1fa121e2]" started-at="2023-12-20T19:22:49 CET" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2023-12-20T19:22:52 CET" duration-ms="2366" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Check if the tasks can be marked done using toggle button"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Validate Positive E2E scenarios & functionalities of the TODO app"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestngTestRunner@1fa121e2]" started-at="2023-12-20T19:22:52 CET" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2023-12-20T19:23:04 CET" duration-ms="12499" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Checks if the tasks completed can be Cleared"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Validate Positive E2E scenarios & functionalities of the TODO app"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestngTestRunner@1fa121e2]" started-at="2023-12-20T19:23:04 CET" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2023-12-20T19:23:07 CET" duration-ms="2529" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Check if a done task can be unchecked and change reflects"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Validate Positive E2E scenarios & functionalities of the TODO app"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:runner.TestngTestRunner@1fa121e2]" started-at="2023-12-20T19:23:07 CET" name="tearDownClass" finished-at="2023-12-20T19:23:07 CET" duration-ms="63" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDownClass -->
+      </class> <!-- runner.TestngTestRunner -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>

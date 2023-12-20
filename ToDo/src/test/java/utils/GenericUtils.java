@@ -51,6 +51,10 @@ public class GenericUtils {
 		action.moveToElement(element).doubleClick().build().perform();
 	}
 	
+	public static void refreshWindow() {
+		driver.navigate().refresh();
+	}
+	
 
 	public static boolean checkElementPresent(By locator) {
 		if(driver.findElements(locator).isEmpty()) {

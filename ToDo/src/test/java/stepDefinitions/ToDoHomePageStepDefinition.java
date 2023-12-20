@@ -3,7 +3,7 @@ package stepDefinitions;
 import java.util.List;
 import java.util.Map;
 
-import org.junit.Assert;
+import org.junit.*;
 import org.openqa.selenium.WebDriver;
 
 import io.cucumber.datatable.DataTable;
@@ -32,7 +32,7 @@ public class ToDoHomePageStepDefinition {
 
 	@Given("User is on the ToDo app home page")
 	public void checkHomePage() {
-		Assert.assertTrue(todoHomePage.getPageUrl().contains("angular2"));
+		org.junit.Assert.assertTrue(todoHomePage.getPageUrl().contains("angular2"));
 	}
 
 	@When("Page is loaded with the header {string} title {string}")
@@ -58,7 +58,7 @@ public class ToDoHomePageStepDefinition {
 			String todoTasks = row.get("Task");
 			Integer rows = Integer.parseInt(row.get("rowid"));
 			todoHomePage.addItemsToDo(todoTasks);
-			Assert.assertTrue("Checks if each task is added", rows.equals(todoHomePage.todoRows()));
+			Assert.assertTrue(rows.equals(todoHomePage.todoRows()));
 		}
 	}
 
@@ -82,7 +82,12 @@ public class ToDoHomePageStepDefinition {
 
 	@And("Check if tasks are deleted")
 	public void checkIfTasksExists() {
-		Assert.assertFalse("If tasks are deleted", todoHomePage.checkToDoTasksExists());
+		Assert.assertFalse(todoHomePage.checkToDoTasksExists());
+	}
+	
+	@And("Check if task is not added")
+	public void checkIfTasksNotAdded() {
+		Assert.assertFalse(todoHomePage.checkToDoTasksExists());
 	}
 	
 	@And("Mark the tasks as Done")
@@ -92,13 +97,28 @@ public class ToDoHomePageStepDefinition {
 	
 	@Then("Check if the tasks are marked Completed {int}")
 	public void checkDoneTasks(Integer doneTasksCount) {
-		Assert.assertEquals("Check if done tasks count matches", doneTasksCount, todoHomePage.getCompletedTasksCount());
+		Assert.assertEquals(doneTasksCount, todoHomePage.getCompletedTasksCount());
 	}
 	
 	@Then("User clicks on Clear Completed button")
 	public void clearTasks() {
 		todoHomePage.clickClearCompleted();
-		Assert.assertFalse("If tasks are cleared", todoHomePage.checkCompletedTasksExists());
+		Assert.assertFalse(todoHomePage.checkCompletedTasksExists());
+	}
+	
+	@And("Check if {int} Duplicate tasks are added")
+	public void duplicateTasks(Integer duplicateTasks) {
+		Assert.assertNotEquals(duplicateTasks,todoHomePage.getItemLeftCount());
+	}
+	
+	@Then("Add empty , input space tasks to the todo list")
+	public void addEmptyTasks() {
+		todoHomePage.addBlankItems();
+	}
+	
+	@And("User refreshes the browsing window")
+	public void refreshWindow() {
+		GenericUtils.refreshWindow();
 	}
 
 }
