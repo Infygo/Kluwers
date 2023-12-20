@@ -107,7 +107,7 @@ Light weight ToDo app and development of Cucumber Test Automation framework to t
 - run the command: **mvn clean**
 - Once the build is success
 - run the command for chrome execution : **mvn test -Dcucumber.filter.tags="@Positive or @Negative" -Dbrowser=chrome**
-- run the command for chrome execution : **mvn test -Dcucumber.filter.tags="@Positive or @Negative" -Dbrowser=firefox**
+- run the command for firefox execution : **mvn test -Dcucumber.filter.tags="@Positive or @Negative" -Dbrowser=firefox**
 - the execution of above command will execute both the positive and negative test case scenarios 
 - Tests will start getting executed and browser invocation will be triggered automatically
 
