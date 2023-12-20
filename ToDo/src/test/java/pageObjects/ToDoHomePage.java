@@ -97,27 +97,4 @@ public class ToDoHomePage {
 		inputBox.sendKeys(Keys.SPACE);
 		inputBox.sendKeys(Keys.ENTER);		
 	}
-
-	public void updateItemsToDo(List<String> updateTasks) throws InterruptedException {
-		List<WebElement> currentTasks = driver.findElements(listofToDos);
-		for (int i = 0; i < currentTasks.size(); i++) {
-			GenericUtils.doubleClick(currentTasks.get(i));
-			System.out.println("Stop here -- goes to edit mode");
-			WebElement editBox = driver.findElement(editToDoList);
-			GenericUtils.emptyTaskInputBox(editBox);
-			System.out.println("Stop here -- goes to view mode");
-			GenericUtils.doubleClick(currentTasks.get(i));
-			System.out.println("Stop here -- goes to edit mode");
-			Thread.sleep(2000);
-			if(editBox.isDisplayed()) {
-				editBox.click();
-			}
-			else {
-				GenericUtils.doubleClick(currentTasks.get(i));
-				editBox.click();
-			}
-			editBox.sendKeys(updateTasks.get(i));
-			editBox.sendKeys(Keys.ENTER);
-		}
-	}
 }

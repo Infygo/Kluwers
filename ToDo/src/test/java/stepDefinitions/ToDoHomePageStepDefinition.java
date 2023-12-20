@@ -63,12 +63,6 @@ public class ToDoHomePageStepDefinition {
 		}
 	}
 
-	@Then("Update tasks in the ToDo app")
-	public void updateTasksToDo(DataTable dataTable) throws InterruptedException {
-		updateTasks = dataTable.asList(String.class);
-		todoHomePage.updateItemsToDo(updateTasks);
-	}
-
 	@Then("User checks the count of tasks to be done {int}")
 	public void todoTasksCount(Integer count) {
 		Assert.assertEquals(count, todoHomePage.getItemLeftCount());
