@@ -88,11 +88,11 @@ Light weight ToDo app and development of Cucumber Test Automation framework to t
   - Click "New" and add the path to the bin directory (e.g., C:\Program Files\Apache\apache-maven-3.x.x\bin)
   - check installation success running the command mvn -v in command prompt
     
-- git clone the repo https://github.com/Infygo/WoltersKluwers.git
+- git clone the repo **https://github.com/Infygo/WoltersKluwers.git**
 - Change directory in the command prompt to the project folder location - cd .\ToDo
-- run the command: mvn clean
+- run the command: **mvn clean**
 - Once the build is success
-- run the command: mvn test -Dcucumber.filter.tags="@Positive or @Negative" -Dbrowser=chrome
+- run the command: **mvn test -Dcucumber.filter.tags="@Positive or @Negative" -Dbrowser=chrome**
 - Tests will start getting executed and browser invocation will be triggered automatically
 
 ## TestResults 
