@@ -1,7 +1,7 @@
 Feature: Validate Negative scenarios for the TODO app
 
   @Negative @duplicateTasks
-  Scenario Outline: Check if duplicate tasks can be added
+  Scenario: Check if duplicate tasks can be added
     Given User is on the ToDo app home page
     Then Add tasks to the ToDo app
       | Task          | rowid |
@@ -10,7 +10,7 @@ Feature: Validate Negative scenarios for the TODO app
     And Check if 2 Duplicate tasks are added
 
   @Negative @blankcase
-  Scenario Outline: Check if blank characters, spaces can be added to todo tasks
+  Scenario: Check if blank characters, spaces can be added to todo tasks
     Given User is on the ToDo app home page
     Then Add empty , input space tasks to the todo list
     And Check if task is not added
